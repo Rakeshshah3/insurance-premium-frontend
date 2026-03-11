@@ -13,7 +13,7 @@ st.set_page_config(
 st.title("🛡️ Insurance Premium Category Predictor")
 st.markdown("Enter your details below to predict your insurance premium category.")
 
-# ------------------- Input Fields -------------------
+# Input Fields
 age = st.number_input("Age", min_value=1, max_value=119, value=30)
 weight = st.number_input("Weight (kg)", min_value=1.0, value=65.0)
 height = st.number_input("Height (m)", min_value=0.5, max_value=2.5, value=1.7)
@@ -35,7 +35,7 @@ occupation = st.selectbox(
     ],
 )
 
-# ------------------- Prediction -------------------
+# Prediction
 if st.button("🔮 Predict Premium Category"):
     input_data = {
         "age": age,
@@ -59,8 +59,8 @@ if st.button("🔮 Predict Premium Category"):
             confidence = prediction["confidence"]
             probabilities = prediction["class_probabilities"]
 
-            # -------- Main Result --------
-            st.success(f"🎯 **Predicted Insurance Premium Category: {category}**")
+         
+            st.success(f"**Predicted Insurance Premium Category: {category}**")
 
             st.metric(
                 label="Model Confidence (Predicted Category)",
